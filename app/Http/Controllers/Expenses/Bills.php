@@ -250,6 +250,25 @@ class Bills extends Controller
 
         $message = trans('messages.success.added', ['type' => trans_choice('general.bills', 1)]);
 
+        // GT Mod - auto payment.
+        if (!empty($request['auto_mark_paid'])) {
+            $amount = $request['amount'];
+            $prequest = new PaymentRequest();
+            $prequest['bill_id'] = $bill->id;
+            $prequest['company_id'] = $bill->company_id;
+            $account = Account::where('enabled', 1)->first();
+            $prequest['account_id'] = $account->id;
+            $prequest['paid_at'] = $bill->due_at;
+            $prequest['amount'] = $bill->amount;
+            $prequest['currency_code'] = $bill->currency_code;
+            $prequest['currency_rate'] = $bill->currency_rate;
+            $prequest['payment_method'] = setting('general.default_payment_method');
+            // TODO- check payment successful.
+            $this->payment($prequest);
+            // Update bill status.
+            $bill->update(['bill_status_code' => 'paid']);
+        }
+
         flash($message)->success();
 
         return redirect('expenses/bills/' . $bill->id);

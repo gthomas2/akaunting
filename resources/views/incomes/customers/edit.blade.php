@@ -26,6 +26,8 @@
 
         {{ Form::textareaGroup('address', trans('general.address')) }}
 
+        {{ Form::textareaGroup('payment_terms', trans('invoices.paymentterms')) }}
+
         {{ Form::radioGroup('enabled', trans('general.enabled')) }}
 
         <div  id="customer-create-user" class="form-group col-md-12 margin-top">

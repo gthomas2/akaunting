@@ -136,5 +136,12 @@
                 </div>
             </div>
         </div>
+
+        @if ($invoice->footer)
+            <div>
+            {!! $invoice->footer !!}
+            </div>
+        @endif
+        
     </section>
 @endsection

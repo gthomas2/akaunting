@@ -28,6 +28,7 @@ return [
     'histories'         => 'Histories',
     'payments'          => 'Payments',
     'add_payment'       => 'Add Payment',
+    'auto_mark_paid'         => 'Mark Paid on Save',
     'mark_received'     => 'Mark Received',
     'download_pdf'      => 'Download PDF',
     'send_mail'         => 'Send Email',
@@ -42,5 +43,9 @@ return [
     'messages' => [
         'received'      => 'Bill marked as received successfully!',
     ],
+
+    'reimburse' => 'Reimburse',
+    'reimbursed' => 'Reimbursed',
+    'operatingexpense' => 'Operating expense'
 
 ];

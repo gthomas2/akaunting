@@ -52,4 +52,6 @@ return [
         'button'        => 'Pay Now',
     ],
 
+    'paymentterms' => 'Payment terms'
+
 ];

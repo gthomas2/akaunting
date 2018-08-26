@@ -7,7 +7,7 @@
         <div class="row invoice-header">
             <div class="col-xs-7">
                 @if ($logo)
-                <img src="{{ $logo }}" class="invoice-logo" />
+                <img src="{{ $logo }}" class="invoice-logo" width="200px"/>
                 @endif
             </div>
             <div class="col-xs-5 invoice-company">
@@ -136,5 +136,10 @@
                 </div>
             </div>
         </div>
+        @if ($invoice->footer)
+            <div>
+            {!! $invoice->footer !!}
+            </div>
+        @endif
     </section>
 @endsection

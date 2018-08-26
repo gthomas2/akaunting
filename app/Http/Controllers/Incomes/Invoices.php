@@ -806,6 +806,9 @@ class Invoices extends Controller
 
         $invoice->template_path = 'incomes.invoices.invoice';
 
+        $customer = $invoice->customer()->first();
+        $invoice->footer = str_replace(chr(13), '<br>', $customer->payment_terms);
+
         event(new InvoicePrinting($invoice));
 
         return $invoice;

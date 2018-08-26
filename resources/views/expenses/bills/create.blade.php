@@ -115,6 +115,19 @@
         {{ Form::recurring('create') }}
 
         {{ Form::fileGroup('attachment', trans('general.attachment'),[]) }}
+
+        <div class="form-group col-md-6">
+            <label>{{trans('bills.reimburse')}} </label>
+            {{ Form::checkbox('reimburse')}}
+        </div>
+        <div class="form-group col-md-6">
+            <label>{{trans('bills.reimbursed')}} </label>
+            {{ Form::checkbox('reimbursed')}}
+        </div>
+        <div class="form-group col-md-6">
+            <label>{{trans('bills.auto_mark_paid')}} </label>
+            {{ Form::checkbox('auto_mark_paid', 1, true)}}
+        </div>
     </div>
     <!-- /.box-body -->
 

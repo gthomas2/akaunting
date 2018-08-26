@@ -120,7 +120,18 @@
 
             {{ Form::recurring('edit', $bill) }}
 
-            {{ Form::fileGroup('attachment', trans('general.attachment'),[]) }}
+            <div class="form-group col-md-12">
+                {{ Form::fileGroup('attachment', trans('general.attachment'),[]) }}
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>{{trans('bills.reimburse')}}</label>
+                {{ Form::checkbox('reimburse')}}
+            </div>
+            <div class="form-group col-md-6">
+                <label>{{trans('bills.reimbursed')}}</label>
+                {{ Form::checkbox('reimbursed')}}
+            </div>
         </div>
         <!-- /.box-body -->
 
